@@ -1,0 +1,25 @@
+1. Install ethers.js using npm or yarn
+   - `npm install ethers` or `yarn add ethers`
+
+2. In your main JavaScript file:
+   - Import ethers from 'ethers'
+
+   - Function to detect MetaMask:
+     - Check if `window.ethereum` is available
+
+   - Function to connect to MetaMask:
+     - Request account access using `window.ethereum.request({ method: 'eth_requestAccounts' })`
+     - Create a new instance of ethers.js provider using `new ethers.providers.Web3Provider(window.ethereum)`
+
+   - Function to get and display the current account:
+     - Use the provider to get the signer
+     - Use the signer to get the account address
+     - Display the account address in your UI
+
+   - Function to handle account changes:
+     - Listen for `accountsChanged` event on `window.ethereum`
+     - Update UI with new account information
+
+   - Call the connect function on page load or on a specific user action (e.g., button click)
+
+3. Update your UI based on the authentication state

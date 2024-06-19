@@ -1,0 +1,120 @@
+project:
+  name: NFT and Token Dashboard
+  description: >
+    An app for users to keep a dashboard of their favorite NFT and token projects.
+    The app will have login, dashboard, and project tracking pages.
+  tech_stack:
+    frontend: 
+      framework: NextJS
+      state_management: zustand
+      UI_library: MUI
+      auth_library: Web3 auth library (e.g., web3modal)
+    backend: 
+      framework: NestJS
+    language: TypeScript
+    tools: 
+      - linters (ESLint)
+      - CI/CD (GitHub Actions)
+      - Docker
+
+repositories:
+  - name: frontend
+    description: Frontend codebase for the app
+  - name: backend
+    description: Backend codebase for the app
+
+steps:
+  - phase: Project Setup
+    duration: 1 day
+    tasks:
+      - description: Initialize frontend repository with NextJS, zustand, and MUI
+        command: |
+          npx create-next-app@latest frontend
+          cd frontend
+          npm install zustand @mui/material @emotion/react @emotion/styled web3modal
+      - description: Initialize backend repository with NestJS
+        command: |
+          npx @nestjs/cli new backend
+          cd backend
+          npm install
+      - description: Setup TypeScript configurations and linters
+        command: |
+          # Frontend
+          cd frontend
+          npm install --save-dev eslint typescript
+          npx eslint --init
+          # Backend
+          cd backend
+          npm install --save-dev eslint typescript
+          npx eslint --init
+
+  - phase: Authentication
+    duration: 2 days
+    tasks:
+      - description: Implement Web3 wallet authentication in frontend
+        details: |
+          - Configure Web3 modal for wallet connections.
+          - Create login page and handle redirections.
+      - description: Setup authentication flow in backend
+        details: |
+          - Implement JWT-based authentication.
+          - Secure endpoints requiring authentication.
+
+  - phase: Dashboard
+    duration: 5 days
+    tasks:
+      - description: Create dashboard layout in frontend
+        details: |
+          - Design layout with MUI.
+          - Display user wallet address and disconnect button.
+      - description: Fetch and display NFT and token projects
+        details: |
+          - Implement API calls to backend for fetching project data.
+          - Display projects with logos and prices.
+          - Add prioritization badges for bookmarked items.
+      - description: Implement backend endpoints for project data
+        details: |
+          - Create endpoints to fetch NFT and token project data.
+          - Implement logic to handle project prioritization.
+
+  - phase: Track Project Page
+    duration: 3 days
+    tasks:
+      - description: Create track project form in frontend
+        details: |
+          - Implement search bar for project name and contract address.
+          - Add radio button for bookmarking projects.
+          - Validate form input and handle submission.
+      - description: Implement backend support for adding projects
+        details: |
+          - Create endpoints to add new projects to user’s dashboard.
+          - Handle form validation and error responses.
+
+  - phase: Testing and CI/CD Setup
+    duration: 3 days
+    tasks:
+      - description: Write unit and integration tests
+        details: |
+          - Use Jest for backend tests.
+          - Use React Testing Library for frontend tests.
+      - description: Setup CI/CD pipelines
+        details: |
+          - Configure GitHub Actions for automated testing and deployments.
+      - description: Dockerize applications
+        details: |
+          - Create Dockerfiles for frontend and backend.
+          - Ensure seamless deployment setup.
+
+  - phase: Final Review and Deployment
+    duration: 2 days
+    tasks:
+      - description: Conduct final code review and testing
+        details: |
+          - Ensure all features are working as expected.
+          - Fix any identified bugs.
+      - description: Deploy applications
+        details: |
+          - Deploy backend on a cloud service (e.g., AWS, Heroku).
+          - Deploy frontend on a static site hosting service (e.g., Vercel, Netlify).
+
+total_duration: 16 days

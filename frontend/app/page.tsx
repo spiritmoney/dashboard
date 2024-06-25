@@ -49,7 +49,7 @@ const Page = () => {
               </p>
               <div className="max-w-[900px] lg:w-[900px] bg-white h-[600px] rounded-lg">
                 {/* Iterate over projects and display them */}
-                {projects.map((project, index) => (
+                {projects.map((project: any, index) => (
                   <div key={index}>{project.name}</div> // Adjust according to your project structure
                 ))}
               </div>

@@ -34,7 +34,7 @@ const AddProject: React.FC<AddProjectProps> = ({ onBack }) => {
   const handleAddProject = async () => {
     if (fetchResult && fetchResult.result) {
       try {
-        const userId = address?.toString();
+        const userId: any = address?.toString();
         const projectData = {
           name: fetchResult.result.name,
           contractAddress: searchTerm,

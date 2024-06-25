@@ -15,13 +15,13 @@ import { Project } from './schemas/project.schema';
 export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('getProjects')
   async findAll(@Request() req): Promise<any> {
-    return this.projectsService.findAll(req.user.address);
+    return this.projectsService.findAll(req.user.Id);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Post('createProject')
   async createProject(
     @Request() req,

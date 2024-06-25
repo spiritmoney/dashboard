@@ -1,7 +1,7 @@
 export const API_BASE_URL = "http://localhost:3001/projects"; // Adjust as needed
 
 export const getAuthHeader = () => {
-  const token = localStorage.getItem("token");
+  const token: any = localStorage.getItem("token");
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
@@ -11,7 +11,7 @@ export const fetchAllProjects = async () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        ...getAuthHeader(),
+        'Authorization': `Bearer ${localStorage.getItem("token")}`
       },
     });
     if (!response.ok) throw new Error("Network response was not ok");
@@ -28,7 +28,6 @@ export const createProject = async (projectData: any, userId: string): Promise<a
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        ...getAuthHeader(),
       },
       body: JSON.stringify({
         userId: userId,

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "USDC",
+    "symbol": "USDC",
+    "marketCap": "$32,626,402,723"
+  },
+  {
+    "name": "Token B",
+    "symbol": "TKNB",
+    "marketCap": "900,000"
+  },
+  {
+    "name": "Token C",
+    "symbol": "TKNC",
+    "marketCap": "850,000"
+  },
+  {
+    "name": "Token D",
+    "symbol": "TKND",
+    "marketCap": "800,000"
+  },
+  {
+    "name": "Token E",
+    "symbol": "TKNE",
+    "marketCap": "750,000"
+  },
+  {
+    "name": "Token F",
+    "symbol": "TKNF",
+    "marketCap": "700,000"
+  },
+  {
+    "name": "Token G",
+    "symbol": "TKNG",
+    "marketCap": "650,000"
+  },
+  {
+    "name": "Token H",
+    "symbol": "TKNH",
+    "marketCap": "600,000"
+  },
+  {
+    "name": "Token I",
+    "symbol": "TKNI",
+    "marketCap": "550,000"
+  },
+  {
+    "name": "Token J",
+    "symbol": "TKNJ",
+    "marketCap": "500,000"
+  }
+]
